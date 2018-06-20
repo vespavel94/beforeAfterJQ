@@ -1,9 +1,11 @@
-$.prototype.initSlider = function(data){
-  $(this).html('<div class="sliderGap"></div>'+
-    '<p class="sliderValue">0</p>'); 
-  var sliderGap = $(this).children(".sliderGap");
-  sliderGap.on("mousedown touchstart", data, Slider);
-}
+(function($){
+  $.fn.initSlider = function(data){
+    $(this).html('<div class="sliderGap"></div>'+
+      '<p class="sliderValue">0</p>'); 
+    var sliderGap = $(this).children(".sliderGap");
+    sliderGap.on("mousedown touchstart", data, Slider);
+  }
+})(jQuery);
 
 function Slider(e){
   var startX = $(this).parent().offset().left,
